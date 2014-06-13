@@ -20,7 +20,7 @@ best <- function(state, outcome) {
     }
     outcomeFrame1[, outCol] <- as.numeric(outcomeFrame1[, outCol])
     outcomeFrame <- outcomeFrame1[outcomeFrame1$State == state,]
-    index <- with(outcomeFrame, order(outcomeFrame[,outCol], outcomeFrame$Hospital.Name))
+    index <- with(outcomeFrame, order(outcomeFrame[,outCol], outcomeFrame$Hospital.Name, na.last = NA))
     #outcomeFrame <- outcomeFrame[order(outcomeFrame[,outCol], na.last = NA),]
     outcomeFrame <- outcomeFrame[index,]    
     outcomeFrame[1,2]
